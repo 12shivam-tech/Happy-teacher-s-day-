@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day, Mam!</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); text-align: center; max-width: 400px; width: 100%; border-top: 8px solid #ff4757; }
+        h1 { color: #ff4757; font-size: 28px; margin-bottom: 5px; }
+        .class-badge { background: #ff4757; color: white; padding: 3px 12px; border-radius: 15px; font-size: 14px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
+        p { color: #57606f; line-height: 1.6; font-size: 16px; }
+        
+        /* Card Image Design */
+        .card-image-box { width: 100%; border-radius: 10px; margin: 20px 0; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .card-image-box img { width: 100%; height: auto; display: block; }
+        
+        /* Interactive Animation Widget Styling */
+        .widget-box { background: #eef2f3; border: 2px solid #00ffcc; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 0 15px rgba(0,255,204,0.2); }
+        .btn-celebrate { background: #00ffcc; color: #333; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-celebrate:hover { background: #00e6b8; transform: scale(1.05); }
+        .wishes-display { font-size: 18px; color: #ff4757; font-weight: bold; margin-top: 15px; min-height: 25px; }
+
+        .badge { background: #2ed573; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .footer-text { font-weight: bold; color: #333; margin-top: 20px; border-top: 1px solid #f1f2f6; padding-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="badge">Special Greeting 🌟</div>
+    <h1>Happy Teacher's Day!</h1>
+    <div class="class-badge">To: MS divya goyal 👩‍🏫</div>
+    
+    <p>Aapne hamein sirf kitabi gyaan nahi, balki jeene ka sahi raasta dikhaya hai. Hamein ek behtar student banane ke liye aapka bahut-bahut dhanyawad, Mam!</p>
+    
+    <!-- Greeting Card Photo Section Added -->
+    <div class="card-image-box">
+        <img src="https://unsplash.com" alt="Teacher's Day Greeting Card">
+    </div>
+
+    <!-- Interactive AI Widget Built-in -->
+    <div class="widget-box">
+        <p style="margin-top:0; font-size:14px; color:#666;">✨ Click below for Mam's Special Message ✨</p>
+        <button class="btn-celebrate" onclick="showWish()">Celebrate 🎉</button>
+        <div id="wishText" class="wishes-display"></div>
+    </div>
+
+    <div class="footer-text">
+        <p style="margin: 0; color: #ff4757;">From Your Student ❤️</p>
+        <p style="margin: 5px 0 0 0; font-size: 18px; color: #2f3542;">Shivam</p>
+        <p style="margin: 2px 0 0 0; font-size: 14px; color: #747d8c;">Class: 8th B</p>
+    </div>
+</div>
+
+<script>
+    const messages = [
+        "Best Teacher in the World! 🌍✨",
+        "Thank you for inspiring us every day! 📚❤️",
+        "Happy Teacher's Day, Divya Mam! 🎉👩‍🏫",
+        "You make learning fun and magical! 🎈⭐"
+    ];
+    function showWish() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        document.getElementById('wishText').innerText = messages[randomIndex];
+    }
+</script>
+
+</body>
+  </html>
+  
