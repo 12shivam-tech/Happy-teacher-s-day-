@@ -14,29 +14,29 @@
         .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); text-align: center; border-top: 8px solid #ff4757; transition: transform 0.3s; position: relative; overflow: hidden; }
         .card:hover { transform: translateY(-5px); }
         .card-2 { border-top: 8px solid #00f2fe; }
-        .card-3 { border-top: 8px solid #2ed573; }
+        .card-3 { border-top: 8px solid #2ed573; text-align: left; }
         
-        h1 { color: #ff4757; font-size: 28px; margin-bottom: 5px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
-        .mam-title { font-size: 24px; color: #764ba2; font-weight: bold; margin-bottom: 15px; }
+        h1, h2 { color: #ff4757; font-size: 28px; margin-bottom: 5px; text-align: center; }
+        .mam-title { font-size: 24px; color: #764ba2; font-weight: bold; margin-bottom: 15px; text-align: center; }
         .class-badge { background: #ff4757; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
         p { color: #57606f; line-height: 1.6; font-size: 16px; font-style: italic; }
         
-        /* Styled Image Sections */
-        .card-image-box { width: 100%; border-radius: 12px; margin: 15px 0; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .card-image-box img { width: 100%; height: auto; display: block; }
+        /* Coding Logic Terminal Widget */
+        .code-terminal { background: #1e1e1e; border-radius: 12px; padding: 20px; text-align: left; font-family: 'Courier New', Courier, monospace; color: #d4d4d4; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-left: 5px solid #00ffcc; margin: 20px 0; }
+        .code-keyword { color: #569cd6; }
+        .code-string { color: #ce9178; }
+        .code-comment { color: #6a9955; font-style: italic; }
+        .code-output { color: #4fc1ff; font-weight: bold; }
         
         /* Mega Widget Box */
         .widget-box { background: linear-gradient(145deg, #ffffff, #f0f0f0); border: 3px solid #00ffcc; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 0 25px rgba(0,255,204,0.3); }
         .btn-celebrate { background: linear-gradient(45deg, #00ffcc, #0099ff); color: white; border: none; padding: 15px 35px; font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,255,204,0.4); text-transform: uppercase; letter-spacing: 1px; }
         .btn-celebrate:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,255,204,0.6); }
-        .wishes-display { font-size: 20px; color: #ff4757; font-weight: bold; margin-top: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.05); min-height: 30px; animation: pop 0.3s ease; }
+        .wishes-display { font-size: 20px; color: #ff4757; font-weight: bold; margin-top: 20px; min-height: 30px; text-align: center; }
         
-        .footer-text { font-weight: bold; color: #333; margin-top: 10px; border-top: 2px dashed #f1f2f6; padding-top: 15px; background: #fff0f2; border-radius: 10px; padding: 10px; }
-        
-        @keyframes pop {
-            0% { transform: scale(0.8); }
-            100% { transform: scale(1); }
-        }
+        /* Letter Styling */
+        .letter-content { font-family: 'Georgia', serif; font-size: 16px; color: #2c3e50; font-style: normal; line-height: 1.8; text-align: justify; }
+        .footer-text { font-weight: bold; color: #333; margin-top: 20px; border-top: 2px dashed #f1f2f6; padding-top: 15px; background: #fff0f2; border-radius: 10px; padding: 15px; text-align: center; }
     </style>
 </head>
 <body>
@@ -45,48 +45,42 @@
 
     <!-- PAGE 1: MAIN SURPRISE CARD -->
     <div class="card">
-        <div class="class-badge">Page 1: Special Greeting 🌟</div>
+        <div class="class-badge" style="display: block; max-width: fit-content; margin: 0 auto 15px auto;">Page 1: Special Greeting 🌟</div>
         <h1>Happy Teacher's Day!</h1>
         <div class="mam-title">To: MS Divya Goyal Mam 👩‍🏫</div>
         
-        <p>"Aapne hamein sirf kitabi gyaan nahi, balki jeene ka sahi raasta dikhaya hai. Hamein ek behtar student banane ke liye aapka bahut-bahut dhanyawad, Mam!"</p>
-        
-        <div class="card-image-box">
-            <img src="https://unsplash.com" alt="Books and Learning">
-        </div>
+        <p style="text-align: center;">"Aapne hamein sirf kitabi gyaan nahi, balki jeene ka sahi raasta dikhaya hai. Hamein ek behtar student banane ke liye aapka bahut-bahut dhanyawad, Mam!"</p>
     </div>
 
-    <!-- INTERACTIVE PARTY BLAST WIDGET (🚨 MAIN ATTRACTION) -->
+    <!-- TECH CODING LOGIC WIDGET (🚨 NEW ATTRACTION) -->
+    <div class="code-terminal">
+        <span class="code-comment">// Success Logic for Best Teacher</span><br>
+        <span class="code-keyword">while</span> (student.learning == <span class="code-keyword">true</span>) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Input: <span class="code-string">"Your Guidance"</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Output: <span class="code-output">"My Success"</span>;<br>
+        }<br>
+        <span class="code-comment">// Thank you for installing knowledge in me!</span>
+    </div>
+
+    <!-- INTERACTIVE PARTY BLAST WIDGET -->
     <div class="widget-box">
         <h3 style="margin-top:0; color:#333; font-size: 18px;">✨ Divya Mam, Please Click Below! ✨</h3>
         <button class="btn-celebrate" onclick="triggerMegaCelebration()">Celebrate 🎉</button>
         <div id="wishText" class="wishes-display">Click the button for a magical surprise! 😍</div>
     </div>
 
-    <!-- PAGE 2: INSPIRATION CARD -->
-    <div class="card card-2">
-        <div class="class-badge" style="background:#00f2fe;">Page 2: Best Guide ✨</div>
-        <h2>Gyaan Ka Deepak 📚</h2>
-        <p>"Aapke padhane ka tarika sabse alag aur sabse pyaara hai. Jab aap muskurakar mushkil sawal samjhati hain, toh sab aasan lagne lagta hai."</p>
-        
-        <div class="card-image-box">
-            <img src="https://unsplash.com" alt="Inspiration">
-        </div>
-    </div>
-
-    <!-- PAGE 3: THANK YOU & STUDENT DETAIL CARD -->
+    <!-- PAGE 2: THE LONG HEARTFELT LETTER (🚨 NEW LONG LETTER) -->
     <div class="card card-3">
-        <div class="class-badge" style="background:#2ed573;">Page 3: Heartfelt Thanks ❤️</div>
-        <h2>Mera Shradha Saburi 🙏</h2>
-        <p>"Mera rasta roshan karne ke liye, aur har galti par pyaar se sahi raah dikhane ke liye aapko dher saara naman, Mam."</p>
-        
-        <div class="card-image-box">
-            <img src="https://unsplash.com" alt="Thank You Teacher">
+        <div class="class-badge" style="background:#00f2fe;">Page 2: A Special Letter For You ✉️</div>
+        <h2>Dear Divya Mam,</h2>
+        <div class="letter-content">
+            <p>I am incredibly grateful for everything you have done for me. You are not just a teacher who explains lessons from books; you are a true guide who illuminates the path of life. Whenever I found a concept difficult or faced a doubt, your smiling face and endless patience made everything clear and simple.</p>
+            <p>Your encouraging words have always given me the confidence to aim higher and believe in my abilities. I hope and pray that I am able to achieve all the great heights that you have instilled in me and imagined for my future. Thank you so much for your unconditional support, constant push, and wonderful guidance every single day.</p>
         </div>
 
         <div class="footer-text">
-            <p style="margin: 0; color: #ff4757; font-weight: bold; font-style: normal;">From Your Proud Student ❤️</p>
-            <p style="margin: 5px 0 0 0; font-size: 22px; color: #2f3542; font-weight: 900;">Shivam</p>
+            <p style="margin: 0; color: #ff4757; font-weight: bold; font-style: normal;">Your Grateful Student ❤️</p>
+            <p style="margin: 5px 0 0 0; font-size: 24px; color: #2f3542; font-weight: 900;">Shivam</p>
             <p style="margin: 2px 0 0 0; font-size: 16px; color: #747d8c; font-weight: bold; font-style: normal;">Class: 8th B</p>
         </div>
     </div>
@@ -98,11 +92,10 @@
         "👑 Best Teacher in the Universe! 🌍✨",
         "❤️ Thank you for inspiring Shivam every day! 📚",
         "🎉 Happy Teacher's Day, Divya Mam! 👩‍🏫⭐",
-        "🔥 You make learning magical and super fun! 🎈"
+        "🔥 Input: Your Support ➜ Output: My Future! 🎈"
     ];
 
     function triggerMegaCelebration() {
-        // Change text message randomly
         const randomIndex = Math.floor(Math.random() * messages.length);
         document.getElementById('wishText').innerText = messages[randomIndex];
 
@@ -125,4 +118,5 @@
 </script>
 
 </body>
-</html>
+    </html>
+    
