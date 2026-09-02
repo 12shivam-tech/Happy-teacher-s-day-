@@ -3,69 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Teacher's Day, Mam!</title>
+    <title>Happy Teacher's Day, Divya Mam!</title>
+    <!-- Confetti Effects library for blast animation -->
+    <script src="https://jsdelivr.net"></script>
     <style>
-        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); text-align: center; max-width: 400px; width: 100%; border-top: 8px solid #ff4757; }
-        h1 { color: #ff4757; font-size: 28px; margin-bottom: 5px; }
-        .class-badge { background: #ff4757; color: white; padding: 3px 12px; border-radius: 15px; font-size: 14px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
-        p { color: #57606f; line-height: 1.6; font-size: 16px; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; color: #333; }
+        .main-container { max-width: 450px; width: 100%; display: flex; flex-direction: column; gap: 25px; margin-bottom: 30px; }
         
-        /* Card Image Design */
-        .card-image-box { width: 100%; border-radius: 10px; margin: 20px 0; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        /* Premium Card Design */
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); text-align: center; border-top: 8px solid #ff4757; transition: transform 0.3s; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-5px); }
+        .card-2 { border-top: 8px solid #00f2fe; }
+        .card-3 { border-top: 8px solid #2ed573; }
+        
+        h1 { color: #ff4757; font-size: 28px; margin-bottom: 5px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .mam-title { font-size: 24px; color: #764ba2; font-weight: bold; margin-bottom: 15px; }
+        .class-badge { background: #ff4757; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; display: inline-block; margin-bottom: 15px; font-weight: bold; }
+        p { color: #57606f; line-height: 1.6; font-size: 16px; font-style: italic; }
+        
+        /* Styled Image Sections */
+        .card-image-box { width: 100%; border-radius: 12px; margin: 15px 0; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .card-image-box img { width: 100%; height: auto; display: block; }
         
-        /* Interactive Animation Widget Styling */
-        .widget-box { background: #eef2f3; border: 2px solid #00ffcc; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 0 15px rgba(0,255,204,0.2); }
-        .btn-celebrate { background: #00ffcc; color: #333; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-celebrate:hover { background: #00e6b8; transform: scale(1.05); }
-        .wishes-display { font-size: 18px; color: #ff4757; font-weight: bold; margin-top: 15px; min-height: 25px; }
-
-        .badge { background: #2ed573; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .footer-text { font-weight: bold; color: #333; margin-top: 20px; border-top: 1px solid #f1f2f6; padding-top: 15px; }
+        /* Mega Widget Box */
+        .widget-box { background: linear-gradient(145deg, #ffffff, #f0f0f0); border: 3px solid #00ffcc; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 0 25px rgba(0,255,204,0.3); }
+        .btn-celebrate { background: linear-gradient(45deg, #00ffcc, #0099ff); color: white; border: none; padding: 15px 35px; font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,255,204,0.4); text-transform: uppercase; letter-spacing: 1px; }
+        .btn-celebrate:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,255,204,0.6); }
+        .wishes-display { font-size: 20px; color: #ff4757; font-weight: bold; margin-top: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.05); min-height: 30px; animation: pop 0.3s ease; }
+        
+        .footer-text { font-weight: bold; color: #333; margin-top: 10px; border-top: 2px dashed #f1f2f6; padding-top: 15px; background: #fff0f2; border-radius: 10px; padding: 10px; }
+        
+        @keyframes pop {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="badge">Special Greeting 🌟</div>
-    <h1>Happy Teacher's Day!</h1>
-    <div class="class-badge">To: MS divya goyal 👩‍🏫</div>
-    
-    <p>Aapne hamein sirf kitabi gyaan nahi, balki jeene ka sahi raasta dikhaya hai. Hamein ek behtar student banane ke liye aapka bahut-bahut dhanyawad, Mam!</p>
-    
-    <!-- Greeting Card Photo Section Added -->
-    <div class="card-image-box">
-        <img src="https://unsplash.com" alt="Teacher's Day Greeting Card">
+<div class="main-container">
+
+    <!-- PAGE 1: MAIN SURPRISE CARD -->
+    <div class="card">
+        <div class="class-badge">Page 1: Special Greeting 🌟</div>
+        <h1>Happy Teacher's Day!</h1>
+        <div class="mam-title">To: MS Divya Goyal Mam 👩‍🏫</div>
+        
+        <p>"Aapne hamein sirf kitabi gyaan nahi, balki jeene ka sahi raasta dikhaya hai. Hamein ek behtar student banane ke liye aapka bahut-bahut dhanyawad, Mam!"</p>
+        
+        <div class="card-image-box">
+            <img src="https://unsplash.com" alt="Books and Learning">
+        </div>
     </div>
 
-    <!-- Interactive AI Widget Built-in -->
+    <!-- INTERACTIVE PARTY BLAST WIDGET (🚨 MAIN ATTRACTION) -->
     <div class="widget-box">
-        <p style="margin-top:0; font-size:14px; color:#666;">✨ Click below for Mam's Special Message ✨</p>
-        <button class="btn-celebrate" onclick="showWish()">Celebrate 🎉</button>
-        <div id="wishText" class="wishes-display"></div>
+        <h3 style="margin-top:0; color:#333; font-size: 18px;">✨ Divya Mam, Please Click Below! ✨</h3>
+        <button class="btn-celebrate" onclick="triggerMegaCelebration()">Celebrate 🎉</button>
+        <div id="wishText" class="wishes-display">Click the button for a magical surprise! 😍</div>
     </div>
 
-    <div class="footer-text">
-        <p style="margin: 0; color: #ff4757;">From Your Student ❤️</p>
-        <p style="margin: 5px 0 0 0; font-size: 18px; color: #2f3542;">Shivam</p>
-        <p style="margin: 2px 0 0 0; font-size: 14px; color: #747d8c;">Class: 8th B</p>
+    <!-- PAGE 2: INSPIRATION CARD -->
+    <div class="card card-2">
+        <div class="class-badge" style="background:#00f2fe;">Page 2: Best Guide ✨</div>
+        <h2>Gyaan Ka Deepak 📚</h2>
+        <p>"Aapke padhane ka tarika sabse alag aur sabse pyaara hai. Jab aap muskurakar mushkil sawal samjhati hain, toh sab aasan lagne lagta hai."</p>
+        
+        <div class="card-image-box">
+            <img src="https://unsplash.com" alt="Inspiration">
+        </div>
     </div>
+
+    <!-- PAGE 3: THANK YOU & STUDENT DETAIL CARD -->
+    <div class="card card-3">
+        <div class="class-badge" style="background:#2ed573;">Page 3: Heartfelt Thanks ❤️</div>
+        <h2>Mera Shradha Saburi 🙏</h2>
+        <p>"Mera rasta roshan karne ke liye, aur har galti par pyaar se sahi raah dikhane ke liye aapko dher saara naman, Mam."</p>
+        
+        <div class="card-image-box">
+            <img src="https://unsplash.com" alt="Thank You Teacher">
+        </div>
+
+        <div class="footer-text">
+            <p style="margin: 0; color: #ff4757; font-weight: bold; font-style: normal;">From Your Proud Student ❤️</p>
+            <p style="margin: 5px 0 0 0; font-size: 22px; color: #2f3542; font-weight: 900;">Shivam</p>
+            <p style="margin: 2px 0 0 0; font-size: 16px; color: #747d8c; font-weight: bold; font-style: normal;">Class: 8th B</p>
+        </div>
+    </div>
+
 </div>
 
 <script>
     const messages = [
-        "Best Teacher in the World! 🌍✨",
-        "Thank you for inspiring us every day! 📚❤️",
-        "Happy Teacher's Day, Divya Mam! 🎉👩‍🏫",
-        "You make learning fun and magical! 🎈⭐"
+        "👑 Best Teacher in the Universe! 🌍✨",
+        "❤️ Thank you for inspiring Shivam every day! 📚",
+        "🎉 Happy Teacher's Day, Divya Mam! 👩‍🏫⭐",
+        "🔥 You make learning magical and super fun! 🎈"
     ];
-    function showWish() {
+
+    function triggerMegaCelebration() {
+        // Change text message randomly
         const randomIndex = Math.floor(Math.random() * messages.length);
         document.getElementById('wishText').innerText = messages[randomIndex];
+
+        // 🎆 CONFETTI BLAST ANIMATION 🎆
+        var count = 200;
+        var defaults = { origin: { y: 0.7 } };
+
+        function fire(particleRatio, opts) {
+          confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+          }));
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
     }
 </script>
 
 </body>
-  </html>
-  
+</html>
