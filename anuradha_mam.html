@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day, Anuradha ma'am!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #070a13; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        
+        /* Background Falling Elements */
+        .heart-fall { position: fixed; top: -10%; font-size: 20px; animation: fall linear infinite; z-index: -1; opacity: 0.3; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+        .mega-wrapper { max-width: 460px; width: 100%; display: flex; flex-direction: column; gap: 25px; margin-bottom: 50px; z-index: 1; }
+        
+        /* Header Hero Badge */
+        .hero-badge { background: linear-gradient(45deg, #ff4757, #ff6b81); padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(255,71,87,0.3); }
+        .hero-badge h1 { margin: 0; font-size: 32px; font-weight: 900; letter-spacing: 1px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .hero-badge .sub { font-size: 14px; text-transform: uppercase; color: #ffd2d7; margin-top: 5px; font-weight: bold; letter-spacing: 2px; }
+
+        /* 1. ORIGINAL NOTE CONTENT SECTION */
+        .image-note-card { background: #f0fdf4; color: #166534; padding: 25px; border-radius: 20px; border: 2px solid #bbf7d0; text-align: center; font-family: 'Georgia', serif; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .image-note-card h3 { margin-top: 0; font-size: 22px; color: #15803d; border-bottom: 2px dashed #bbf7d0; padding-bottom: 10px; }
+        .italic-msg { font-size: 16px; line-height: 1.8; font-style: italic; margin: 12px 0; }
+
+        /* 2. TECH CODING LOGIC WIDGET */
+        .tech-box { background: #1e293b; border-radius: 20px; padding: 25px; border: 2px solid #38bdf8; box-shadow: 0 0 25px rgba(56,189,248,0.25); font-family: 'Courier New', Courier, monospace; }
+        .tech-header { font-size: 13px; color: #64748b; margin-bottom: 15px; border-bottom: 1px solid #334155; padding-bottom: 8px; display: flex; justify-content: space-between; }
+        .keyword { color: #f43f5e; font-weight: bold; }
+        .string { color: #10b981; }
+        .output-highlight { color: #38bdf8; font-weight: bold; background: rgba(56,189,248,0.15); padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 5px; }
+
+        /* 3. DOUBLE HEAVY INTERACTIVE SURPRISE BOX */
+        .celebrate-zone { background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); border-radius: 20px; padding: 30px; text-align: center; border: 3px solid #d946ef; box-shadow: 0 15px 35px rgba(217,70,239,0.2); }
+        .btn-magic { background: linear-gradient(45deg, #d946ef, #8b5cf6, #38bdf8); background-size: 200% auto; color: white; border: none; padding: 18px 35px; font-size: 18px; font-weight: bold; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 15px rgba(217,70,239,0.4); transition: all 0.3s; }
+        .btn-magic:hover { transform: scale(1.05); }
+        .msg-screen { font-size: 19px; color: #f43f5e; font-weight: bold; margin-top: 20px; min-height: 50px; line-height: 1.5; text-shadow: 0 0 5px rgba(244,63,94,0.2); }
+
+        /* 4. PREMIUM NOTEBOOK LONG LETTER 1 */
+        .notebook-card { background: #ffffff; color: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border-left: 10px solid #3b82f6; position: relative; }
+        .notebook-card h2 { color: #0f172a; margin-top: 0; font-size: 22px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        .letter-p { font-size: 15px; line-height: 1.8; color: #334155; text-align: justify; margin-bottom: 15px; }
+        .badge-tag { background: #f43f5e; color: white; padding: 4px 12px; border-radius: 10px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 12px; text-transform: uppercase; }
+
+        /* 5. SHAYARI & QUOTES BANNER */
+        .shayari-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 20px; padding: 25px; border-right: 8px solid #eab308; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .shayari-text { font-size: 18px; line-height: 1.8; color: #facc15; font-weight: bold; font-style: italic; }
+
+        /* 6. PREMIUM NOTEBOOK LONG LETTER 2 */
+        .notebook-card-2 { background: #ffffff; color: #1e293b; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border-left: 10px solid #10b981; }
+
+        /* 7. DETAILED THANK YOU CARD HIGHLIGHTS */
+        .thank-you-grid { background: #1e293b; border-radius: 20px; padding: 25px; border: 2px dashed #475569; }
+        .thank-you-grid h4 { margin: 0 0 15px 0; color: #f1f5f9; font-size: 18px; text-align: center; border-bottom: 1px dashed #334155; padding-bottom: 12px; }
+        .note-item { background: #0f172a; padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 5px solid #38bdf8; font-size: 14px; line-height: 1.6; color: #cbd5e1; }
+        
+        /* 8. MEMORABLE COUNTDOWN WIDGET */
+        .countdown-widget { background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%); border-radius: 20px; padding: 20px; text-align: center; border: 1px solid #4338ca; }
+        .countdown-title { font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .countdown-display { font-size: 20px; color: #38bdf8; font-weight: bold; font-family: monospace; }
+
+        /* Final Footer Sign Card */
+        .sign-box { margin-top: 10px; background: #fff0f2; border-radius: 15px; padding: 20px; text-align: center; color: #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+<div class="mega-wrapper">
+
+    <!-- HERO HEADER BANNER -->
+    <div class="hero-badge">
+        <h1>HAPPY TEACHER'S DAY</h1>
+        <div class="sub">Specially Created For Anuradha ma'am</div>
+    </div>
+
+    <!-- 1. IMAGE ORIGINAL NOTE CONTENT -->
+    <div class="image-note-card">
+        <h3>Dear Teacher 👩‍🏫</h3>
+        <div class="italic-msg">"I am grateful for everything you have done for me."</div>
+        <div class="italic-msg">"I hope I am able to achieve all that you have instilled in me."</div>
+        <div class="italic-msg" style="font-weight: bold; color: #15803d; border-top: 1px dashed #bbf7d0; padding-top: 10px;">"Thank you for your support and guidance."</div>
+    </div>
+
+    <!-- 2. TECH CODING LOGIC WIDGET -->
+    <div class="tech-box">
+        <div class="tech-header"><span>💻 Shivam_Logic_Terminal.js</span><span style="color:#10b981;">● Online</span></div>
+        <span class="keyword">function</span> <span style="color:#e2e8f0;">teachersDay</span>() {<br>
+        &nbsp;&nbsp;<span class="keyword">let</span> input = <span class="string">"Your Guidance"</span>;<br>
+        &nbsp;&nbsp;<span class="keyword">let</span> output = <span class="string">"My Success"</span>;<br>
+        &nbsp;&nbsp;<span class="keyword">return</span> <span class="output-highlight">output</span>;<br>
+        }<br>
+        <span style="color:#64748b;">// Thank you Ms Anuradha ma'am!</span>
+    </div>
+
+    <!-- 3. DOUBLE HEAVY INTERACTIVE BLAST WIDGET -->
+    <div class="celebrate-zone">
+        <div class="badge-tag" style="background:#d946ef;">✨ Grand Celebration Button ✨</div>
+        <h3 style="margin: 0 0 15px 0; font-size: 16px; color:#cbd5e1;">Anuradha ma'am, Click This Button:</h3>
+        <button class="btn-magic" onclick="doHeavyMegaBlast()">Celebrate 🎉</button>
+        <div id="displayArea" class="msg-screen">Click above to unlock the magical blast! 😍</div>
+    </div>
+
+    <!-- 4. BIG LETTER 1: GRATITUDE -->
+    <div class="notebook-card">
+        <span class="badge-tag" style="background: #3b82f6;">Letter Part 1: Inspiring Minds</span>
+        <h2>To My Wonderful Mentor,</h2>
+        <div class="letter-p">I am incredibly grateful for everything you have done for me. You are not just a teacher who explains lessons from books; you are a true guide who illuminates the path of knowledge and wisdom. Your passion for teaching is truly inspiring and motivating.</div>
+        <div class="letter-p">Your encouraging words have always given me the confidence to aim higher and believe in my abilities. I hope and pray that I am able to achieve all the great heights that you have envisioned for me and make you proud with my accomplishments.</div>
+    </div>
+
+    <!-- 5. SHAYARI BANNER BREAK -->
+    <div class="shayari-box">
+        <div class="badge-tag" style="background: #eab308; color: #0f172a;">Anmol Vachan ✨</div>
+        <div class="shayari-text">
+            "Aksar roshan karte hain jo doosron ki raah ko,<br>
+            Khuda hamesha barkat deta hai aise ustaad ko!"<br>
+            <span style="font-size: 14px; color: #a1a1aa; font-weight: normal; display: block; margin-top: 5px;">- Dedicated to Anuradha ma'am</span>
+        </div>
+    </div>
+
+    <!-- 6. BIG LETTER 2: IMPACT -->
+    <div class="notebook-card notebook-card-2">
+        <span class="badge-tag" style="background: #10b981;">Letter Part 2: Heartfelt Thanks</span>
+        <h2>The Mark of a Great Teacher,</h2>
+        <div class="letter-p">Mam, a good teacher teaches from the book, but a great teacher like you teaches straight from the heart. Thank you for being such an amazing mentor and for creating an environment where every student feels valued and heard.</div>
+        <div class="letter-p">You have taught me that making mistakes is just a step toward learning better. The life lessons you share between studies are things I will protect and carry with me forever. Your wisdom extends beyond textbooks and into the realm of character building.</div>
+    </div>
+
+    <!-- 7. DETAILED THANK YOU HIGHLIGHTS -->
+    <div class="thank-you-grid">
+        <h4>📌 Special Thank You Highlights</h4>
+        <div class="note-item">⭐ <b>For Your Patience:</b> For listening to every silly question and explaining it until I completely understood.</div>
+        <div class="note-item">⭐ <b>For Your Motivation:</b> For believing in me even when I doubted my own capabilities.</div>
+        <div class="note-item">⭐ <b>For Your Kindness:</b> For making Class 8th B the most comfortable and best learning place.</div>
+    </div>
+
+    <!-- 8. TIME RECORD WIDGET -->
+    <div class="countdown-widget">
+        <div class="countdown-title">🕒 Class 8th B Memory Status</div>
+        <div class="countdown-display" id="liveClock">Loading Live Memories...</div>
+    </div>
+
+    <!-- FINAL SIGNATURE CARD -->
+    <div class="sign-box">
+        <span class="badge-tag" style="background: #ef4444; margin-bottom: 5px;">Your Most Grateful Student ❤️</span>
+        <div style="font-size: 28px; font-weight: 900; color: #0f172a; margin-top: 5px;">Shivam</div>
+        <div style="font-size: 16px; color: #475569; font-weight: bold; margin-top: 2px;">Class: 8th B</div>
+        <p style="margin: 15px 0 0 0; font-size: 13px; color: #64748b; font-weight: bold;">Wishing you a very Happy Teacher's Day full of joy, health, and endless happiness! ✨</p>
+    </div>
+
+</div>
+
+<script>
+    // 1. Falling Hearts Effect
+    const heartSymbols = ['❤️', '💖', '✨', '🌸', '⭐'];
+    for(let i=0; i<25; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'heart-fall';
+        heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+        document.body.appendChild(heart);
+    }
+
+    // 2. Memory Clock Timer
+    setInterval(() => {
+        const now = new Date();
+        document.getElementById('liveClock').innerText = now.toLocaleTimeString() + " | Always Grateful";
+    }, 1000);
+
+    // 3. Mega Blast Audio-Visual Function
+    const specialWishes = [
+        "👑 You are the Best Teacher in the Universe! ✨",
+        "❤️ Thank you for installing knowledge in me, Anuradha ma'am! 📚",
+        "🎉 Happy Teacher's Day, Ms Anuradha ma'am! ⭐",
+        "🚀 Input: Your Support ➜ Output: My Future! 🎈"
+    ];
+
+    function doHeavyMegaBlast() {
+        const index = Math.floor(Math.random() * specialWishes.length);
+        document.getElementById('displayArea').innerText = specialWishes[index];
+
+        // 🎆 DOUBLE HEAVY MULTI-DIRECTIONAL CONFETTI BLAST 🎆
+        var duration = 4 * 1000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+          confetti({ particleCount: 6, angle: 60, spread: 65, origin: { x: 0, y: 0.6 } });
+          confetti({ particleCount: 6, angle: 120, spread: 65, origin: { x: 1, y: 0.6 } });
+          if (Math.random() > 0.75) {
+            confetti({ particleCount: 15, startVelocity: 30, spread: 360, origin: { x: 0.5, y: 0.4 } });
+          }
+          if (Date.now() < end) { requestAnimationFrame(frame); }
+        }());
+    }
+</script>
+
+</body>
+</html>
